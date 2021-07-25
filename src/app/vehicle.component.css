@@ -1,0 +1,14 @@
+
+main, header{
+    width: 50%;
+    margin: auto;
+}
+
+#heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+input[type="text"]:disabled {
+    background: #d0deca;
+}

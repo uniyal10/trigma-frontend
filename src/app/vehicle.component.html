@@ -1,0 +1,36 @@
+<header>
+    <div id="heading">
+      <h1>Trigma Assignment</h1>
+      <div id="headingButton">
+        <button (click)="isAdd(true)">Add Vehicles</button>
+      </div>
+    </div>
+    
+  </header>
+  <main>
+     <table>
+       <tr>
+         <th>Make</th>
+         <th>Model</th>
+         <th>Year</th>
+       </tr>
+       <tr *ngIf="add">
+        <td><input type="text" [(ngModel)]="vehicle.make"></td>
+        <td><input type="text" [(ngModel)]="vehicle.model"></td>
+        <td><input type="text" [(ngModel)]="vehicle.year"></td>
+        <td><button routerLink="/home" (click)="addVehicle(vehicle._id)">Save</button></td>
+        <td><button (click)="isAdd(false)">Cancel</button></td>
+      </tr>
+       <tr *ngFor="let vehicle of vehicles">
+         <td><input type="text" [(ngModel)]="vehicle.make" disabled></td>
+         <td><input type="text" [(ngModel)]="vehicle.model" disabled></td>
+         <td><input type="text" [(ngModel)]="vehicle.year" disabled></td>
+         <td><button (click)="isEdit(true,vehicle)">Edit</button></td>
+         <td routerLink="/home" (click)="onDelete(vehicle._id)"><button>Delete</button></td>
+       </tr>
+     </table>
+  </main>
+  
+  <footer>
+  
+  </footer>
