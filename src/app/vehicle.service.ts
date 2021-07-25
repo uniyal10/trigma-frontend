@@ -13,22 +13,22 @@ export class VehicleService {
   constructor(private http:HttpClient) { }
 
   getVehicles():Observable<Vehicles[]>{
-      const url = "http://localhost:3000/home"
+      const url = "https://trigma.herokuapp.com/home"
       return this.http.get<Vehicles[]>(url);
   }
 
   addVehicles(vehicle:Vehicles){
-     const url = "http://localhost:3000/add"
+     const url = "https://trigma.herokuapp.com/add"
      return this.http.post<{}>(url,vehicle, this.httpOptions);
   }
 
   updateVehicle(vehicle:Vehicles,id?:string){
-    const url = `http://localhost:3000/update/${id}`
+    const url = `https://trigma.herokuapp.com/${id}`
     return this.http.patch(url,vehicle,this.httpOptions);
   }
 
   deleteVehicle(id:string){
-    const url = `http://localhost:3000/delete/${id}`;
+    const url = `https://trigma.herokuapp.com/${id}`;
     return this.http.delete(url);
   }
 }
