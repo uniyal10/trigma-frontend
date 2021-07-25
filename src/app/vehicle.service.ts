@@ -23,12 +23,12 @@ export class VehicleService {
   }
 
   updateVehicle(vehicle:Vehicles,id?:string){
-    const url = `https://trigma.herokuapp.com/${id}`
+    const url = `https://trigma.herokuapp.com/update/${id}`
     return this.http.patch(url,vehicle,this.httpOptions);
   }
 
   deleteVehicle(id:string){
-    const url = `https://trigma.herokuapp.com/${id}`;
+    const url = `https://trigma.herokuapp.com/delete/${id}`;
     return this.http.delete(url);
   }
 }
